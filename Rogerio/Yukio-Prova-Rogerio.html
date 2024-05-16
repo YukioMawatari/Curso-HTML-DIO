@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Rogério HTML</title>
+    <link rel="icon" href="https://www.univem.edu.br/img/site/logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="Home">
+        <nav>
+            <h1>Layout Simples</h1>
+    <ul>
+        <li>
+            <a href="#Home">Home</a>
+            <a href="#Sobre">Sobre</a>
+            <a href="#Contato">Contato</a>
+        </li>
+    </ul>
+        </nav>
+    </header>
+
+<main id="Sobre">
+<section>
+    <div class="img01">
+        <h2>Tópico 1</h2>
+        <p>Neste tópico você colocará uma imagem que se encontra hospedada em uma página qualquer.</p>
+        <img src="https://www.univem.edu.br/storage/posts/December2023/yJTy5s3btCNG7OAfE6ug.png" alt="13° Congresso de Pesquisa Científica" width="100%">
+    </div>
+    <div class="img02">   
+        <h2>Tópico 2</h2>
+        <p>Neste tópico você colocará uma imagem que se encontra hospedada em uma página qualquer.</p>
+        <img src="https://www.univem.edu.br/storage/posts/March2024/OSlp6zgpKPPLxzwGVd41.jpg" alt="UNIVEM Brilha no Prêmio “Não Aceito Corrupção”: Alunos e Professor Alcançam Top 10 Entre 238 Competidores" width="100%">
+    </div> 
+
+    <div class="img03">   
+        <h2>Tópico 3 - Formulário</h2>
+            <form action="url-destino" method="get">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite o seu nome" required>
+                <br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="aulahtml@gmail.com" required>
+                <br>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+
+                <label for="messagem">Mensagem:</label>
+                <textarea name="message" id="message" minlength="5" maxlength="200" rows="8" cols="30" required readonly>Texto do textarea</textarea>
+                <br>
+
+
+                <div class="datas">
+                    <input type="date" name="dia">
+                    <input type="time" name="horas">
+                </div>
+                <br>
+                <input type="number" name="quantidade" min="10" max="50" step="2">
+                <br>
+
+                <input type="range" name="volume" min="50" max="100">
+                <br>
+
+                <input type="color" name="cor">
+                <br>
+
+                <input type="file" name="arquivos" multiple>
+                <br>
+
+                <input type="search" name="pesquisa" placeholder="Pesquise...">
+                <br>
+
+                <p>Selecione os tópicos de interesse</p>
+                <label><input type="checkbox" name="Selecione" value="tecnologia">Tecnologia</label>
+                <label><input type="checkbox" name="Selecione" value="esporte">Esporte</label>
+                <label><input type="checkbox" name="Selecione" value="artes">Artes</label>
+                <br>
+
+                <p>Escolha seu plano de assinatura</p>
+                <label id="texto"><input type="radio" name="plano" value="mensal">Mensal</label>
+                <label><input type="radio" name="plano" value="anual">Anual</label>
+                <label><input type="radio" name="plano" value="vitalicio">Vitalício</label>
+
+
+                <div class="botao-center">
+                <button class="enviar" type="submit"><strong>Enviar</strong></button>
+                <button class="limpar" type="reset"><strong>Limpar</strong></button>
+                </div>          
+            </form>
+        </div> 
+</section>
+</main>
+
+<footer id="Contato">
+    <p>Avaliação de Front-End Ciência da Computação e Sistema de informação</p>
+</footer>
+
+</body>
+</html>

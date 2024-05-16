@@ -1,0 +1,50 @@
+/* Telas maiores que 1024px de largura (desktop)*/
+@media (min-width: 1024px){
+    body{
+        background-color: red;
+    }
+
+    .container > .box{
+        width: 22%; /*Menor porcentual para permitir 4 caixas em linha*/
+        background-color: darkred;
+    }
+}
+
+/* Telas de tablet, minimo 768px de largura e máximo 1023px de largura*/
+@media (min-width: 768px) and (max-width: 1023px){
+    body{
+        background-color: green;
+    }
+
+    .container > .box{
+        width: 48%; /*Quase 50% - caberá 2 box p/linha*/
+        background-color: darkred;
+        border-radius: 50fr;
+    }
+}
+
+/*Telas para celulares, pega a largura máxima de 767px, o minímo seria 0*/
+@media (max-width: 767px){
+    body{
+        background-color: blue;
+    }
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.box{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.2rem;
+    background-color: gray;
+}
