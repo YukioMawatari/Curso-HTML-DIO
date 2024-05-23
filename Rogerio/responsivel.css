@@ -1,7 +1,7 @@
 /* Telas maiores que 1024px de largura (desktop)*/
 @media (min-width: 1024px){
     body{
-        background-color: red;
+        background-color: red
     }
 
     .container > .box{
@@ -18,8 +18,7 @@
 
     .container > .box{
         width: 48%; /*Quase 50% - caberá 2 box p/linha*/
-        background-color: darkred;
-        border-radius: 50fr;
+        background-color: darkgreen;
     }
 }
 
@@ -27,6 +26,10 @@
 @media (max-width: 767px){
     body{
         background-color: blue;
+    }
+
+    .container > .box{
+        background-color: darkblue;
     }
 }
 

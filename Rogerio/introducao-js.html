@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução JS</title>
+    <style>
+        button:hover{
+            background-color: red;
+        }
+
+        button{
+            border-radius: 10px;
+            width: 10%;
+            cursor: pointer;
+        }
+
+        img{
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Botão alterando nome-->
+    <p id="demo">
+        Texto original.
+    </p>
+
+    <button ondblclick="mudarTexto()">Mudar Texto</button> <br>
+
+    <br>
+
+    <!--Botão inserindo nome no input-->
+    <input type="text" id="nome" name="nome">
+    <br>
+    <button onclick="mudarInput()">Mudar Campos</button>
+
+     <!--Botão mudando a cor do texto-->
+    <p id="meuTexto">Mudando a cor do texto</p>
+    <button onclick="mudarCor()">Mudar a cor</button>
+
+   <p id="mostrar">Aqui vai mostrar</p>
+   <button onclick="Mostrar()">Mostrar</button>
+   <button onclick="Esconder()">Esconder</button>
+    <br>
+   <img src="imagem.png" alt="">
+    <br>
+
+    //Js com input de teclado
+    <p><input type="text" name="text" id="inputTeclado" placeholder="Digite algo e pressione Enter"></p>
+
+    <br><br>
+
+    //Colocando imagem, para que quando o botão foi pressionado, seja feita a troca de imagem
+   
+    <a href="https://www.univem.edu.br/home" id="trocalink"> <img src="https://hermes.digitalinnovation.one/assets/diome/logo.png" alt="Logo da dio" id="trocaimg"></a>
+    <br>
+    <button onclick="mudarimg()">Mudar Imagem</button>
+   <script>
+    function mudarTexto(){
+    // Pegando o elemento pelo id do p
+    var elemento = document.getElementById('demo');
+
+    // Alterando o objeto do HTML
+    elemento.innerHTML='Texto alterado!';
+}
+    function mudarInput(){
+    var inputName = document.getElementById('nome');
+    inputName.value = 'Nome inserido!';  
+}
+
+function mudarCor() {
+    var colorText = document.getElementById('meuTexto');
+    colorText.style = "color: red; border: 10px solid pink; font-size: 50px;";
+
+}
+
+   //Selecionando o id do botão esconder e quando clicar o texto fica invisible
+   function Esconder(){
+    var mostrarText = document.getElementById('mostrar');
+    mostrarText.style.visibility = "hidden";
+}
+
+//Selecionando o id do botão mostrar e quando clicar o texto fica visivel
+function Mostrar(){
+    var esconderText = document.getElementById('mostrar');
+    esconderText.style.visibility = "visible";
+}
+
+//Selecionando o id do formulario -> fica ouvindo ele e presta atenção se vai ter alguma tecla pressinada -> caso a teclada enter seja pressionada é enviado um alert
+document.getElementById('inputTeclado').addEventListener('keypress', function(evento){
+    if(evento.key == 'Enter'){
+        alert('Enter pressionado!');
+    }
+}
+);
+
+//Troca de imagens
+
+function mudarimg(){
+    document.getElementById('trocaimg').src='https://img.freepik.com/vetores-gratis/vetor-de-gradiente-de-logotipo-colorido-de-passaro_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.672697106.1715472000&semt=ais_user';
+}
+</script>
+</body>
+</html>
