@@ -22,6 +22,7 @@
     </style>
 </head>
 <body>
+    <main id="conteudo">
 
     <!--Botão alterando nome-->
     <p id="demo">
@@ -48,16 +49,21 @@
    <img src="imagem.png" alt="">
     <br>
 
-    //Js com input de teclado
+    <!--Js com input de teclado-->
     <p><input type="text" name="text" id="inputTeclado" placeholder="Digite algo e pressione Enter"></p>
 
     <br><br>
 
-    //Colocando imagem, para que quando o botão foi pressionado, seja feita a troca de imagem
-   
+    <!--Colocando imagem, para que quando o botão foi pressionado, seja feita a troca de imagem-->
     <a href="https://www.univem.edu.br/home" id="trocalink"> <img src="https://hermes.digitalinnovation.one/assets/diome/logo.png" alt="Logo da dio" id="trocaimg"></a>
     <br>
+
     <button onclick="mudarimg()">Mudar Imagem</button>
+    <br><br>
+</main>
+
+    <!--Botão para mostrar e esconder o conteudo-->
+    <button id="visivel">Conteudo</button>
    <script>
     function mudarTexto(){
     // Pegando o elemento pelo id do p
@@ -98,10 +104,45 @@ document.getElementById('inputTeclado').addEventListener('keypress', function(ev
 );
 
 //Troca de imagens
-
 function mudarimg(){
     document.getElementById('trocaimg').src='https://img.freepik.com/vetores-gratis/vetor-de-gradiente-de-logotipo-colorido-de-passaro_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.672697106.1715472000&semt=ais_user';
 }
+
+// IF E ELSE, realizando um exercicio de faltas e notas para saber se está aprovado ou não
+let nota = prompt("Digite a nota da disciplina:");
+let faltas = prompt("Digite a qunatidade de faltas:");
+
+nota = parseFloat(nota); // Converte a nota para um número em casos decimas
+faltas = parseInt(faltas); // Converte as faltas para um número inteiro
+
+if(nota > 6 && faltas < 20){
+    alert("Você está aprovado!");
+}
+
+else{
+    alert("Você está reprovado");
+}
+
+// Criando botao para mostrar o conteudo e esconder
+// Pegando a referencia do meu document (seria o html) com id "visivel do meu botão" ->  adicionando um evento "click", ou seja
+// quando clicar no botão com ID "visivel" vai chamar a função
+document.getElementById('visivel').addEventListener('click', function(){
+
+    // Criando variavel conteudo e chamando a referencia do meu document (seria o html) com id "conteudo do meu main"
+    var conteudo = document.getElementById('conteudo');
+
+    // Se variavel conteudo for igual a "none", vai fazer com que meu main fique com display block
+    if(conteudo.style.display === 'none'){
+        conteudo.style.display = 'block'; // Mostra conteudo
+    }
+
+    // Se não o conteudo vai ficar com display "none"
+    else{
+        conteudo.style.display = 'none'; // Esconder conteudo
+    }
+});
+
+
 </script>
 </body>
 </html>

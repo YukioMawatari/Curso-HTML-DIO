@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Aula JS</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgb(255, 255, 255);
+            font-size: 20px;
+            background-color: #696969;
+            color: white;
+        }
+        
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+        }
+
+        form{
+            background-color: #1C1C1C;
+            width: 450px;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+
+        input[type="text"], input[type="number"]{
+            width: 300px;
+            border-radius: 50px;
+            padding: 5px;
+        }
+
+        button[type="submit"]{
+            width: 300px;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+
+        button:hover{
+            background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+        }
+        select[name="sexo"]{
+            width: 200px;
+            text-align: center;
+            padding: 3px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <form>
+        <label for="anoNascimento">Ano de nascimento:</label>
+        <input type="number" id="anoNascimento" name="anoNascimento" onchange="verificarSexoEidade()" placeholder="Digite o ano de nascimento"><br><br>
+
+        <label for="sexo">Sexo:</label><br>
+        <select name="sexo" id="sexo" onchange="verificarSexoEidade()">
+            <option value="">Selecione</option>
+            <option value="homem">Homem</option>
+            <option value="mulher">Mulher</option>
+        </select><br><br>
+
+        <label for="reservista">Documento de Reservista:</label><br>
+        <input type="text" id="reservista" name="reservista" readonly><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</main>
+
+<script>
+    function verificarSexoEidade(){
+        // Convertendo em número inteiro o documento com id anoNascimento
+        const anoNascimento = parseInt(document.getElementById("anoNascimento").value);
+        const sexo = document.getElementById("sexo").value;
+        const reservista = document.getElementById("reservista");
+
+        // Chamando a função outra função para calcular a idade
+        const idade = calcularIdade(anoNascimento);
+
+        // Verificando se está dentro da condição para liberar o campo readOnly e aplica um placeholder = "Digite seu nº de reservista"
+        if(sexo === "homem" && idade >=18){
+            reservista.readOnly= false;
+            reservista.placeholder = "Digite seu nº de reservista";
+        }
+
+        // Caso chegue ser alterado o sexo, vai ser limpado o campo e aplicar um placeholder = "Campo não aplicável"
+        else{
+            reservista.readOnly = true;
+            reservista.placeholder = "Campo não aplicável"
+            reservista.value = "";
+        }
+    }
+
+    // Função para calcular a idade, cria uma date que pega o ano atual nosso -> retorna o anotual - anonascimento
+    function calcularIdade(anoNascimento){
+        const anoAtual = new Date().getFullYear();
+        return anoAtual - anoNascimento;
+    }
+</script>
+</body>
+</html>
